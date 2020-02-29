@@ -9,7 +9,7 @@
 
 Task Management API create with [NestJS](https://github.com/nestjs/nest).
 
-### Themes:
+#### Themes:
 
 Develop production-ready REST API's
 CRUD operations 
@@ -22,24 +22,24 @@ Logging
 Security best practices
 
 
-### API Endpoints - Tasks
+#### API Endpoints - Tasks
 
- /tasks GET => Get tasks (include filter)
+ *  /tasks GET => Get tasks (include filter)
  
- /tasks/:id GET => Get a task
+ *  /tasks/:id GET => Get a task
  
- /tasks POST => Create a task
+ *  /tasks POST => Create a task
  
- /tasks/:id DELETE => Delete a task
+ *  /tasks/:id DELETE => Delete a task
  
- /tasks/:id/status PATCH => Update task status
+ *  /tasks/:id/status PATCH => Update task status
  
  
-### Auth Endpoints
+#### Auth Endpoints
  
- /auth/signup POST => Sing up
+ * /auth/signup POST => Sing up
  
- /auth/signin POST => Sing in
+ * /auth/signin POST => Sing in
 
 ## Installation
 
