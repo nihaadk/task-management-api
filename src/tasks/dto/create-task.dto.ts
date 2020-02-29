@@ -1,8 +1,6 @@
-export interface Task {
-	id: string;
+export class CreateTaskDto {
 	title: string;
 	description: string;
-	status: TaskStatus;
 }
 
 export enum TaskStatus {
