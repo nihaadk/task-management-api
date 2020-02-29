@@ -11,15 +11,15 @@ Task Management API create with [NestJS](https://github.com/nestjs/nest).
 
 #### Themes:
 
-Develop production-ready REST API's
-CRUD operations 
-Erro handling
-Data transfer Objects (DTO)
-System modularity
-Backend development best practices
-Configuration management
-Logging
-Security best practices
+ * Develop production-ready REST API's
+ * CRUD operations 
+ * Erro handling
+ * Data transfer Objects (DTO)
+ * System modularity
+ * Backend development best practices
+ * Configuration management
+ * Logging
+ * Security best practices
 
 
 #### API Endpoints - Tasks
