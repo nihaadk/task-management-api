@@ -26,12 +26,4 @@ export class TasksController {
 	createTask(@Body() createTaskDto: CreateTaskDto): Task {
 		return this.tasksService.createTask(createTaskDto);
 	}
-
-	/*
-	Example: if we not extract body attributes
-	@Post()
-	createTask(@Body() body) {
-		console.log('body', body);
-    }
-    */
 }
