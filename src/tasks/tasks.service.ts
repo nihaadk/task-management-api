@@ -7,7 +7,7 @@ import { CreateTaskDto } from './dto/create-task.dto';
 export class TasksService {
 	private tasks: Task[] = [];
 
-	getAllTasks(): Task[] {
+	getTasks(): Task[] {
 		return this.tasks;
 	}
 
