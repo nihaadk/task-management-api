@@ -70,6 +70,11 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Use Libraries
+
+- [class-validator](https://github.com/typestack/class-validator)
+- [class-transformer](https://github.com/typestack/class-transformer)
+
 ## License
 
 Nest is [MIT licensed](LICENSE).
