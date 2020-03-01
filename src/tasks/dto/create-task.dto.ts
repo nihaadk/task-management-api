@@ -1,10 +1,10 @@
-export class CreateTaskDto {
-	title: string;
-	description: string;
-}
+import { IsNotEmpty } from 'class-validator';
 
-export enum TaskStatus {
-	OPEN = 'OPEN',
-	IN_PROGRESS = 'IN_PROGRESS',
-	DONE = 'DONE'
+export class CreateTaskDto {
+	
+	@IsNotEmpty() 
+	title: string;
+
+	@IsNotEmpty() 
+	description: string;
 }
