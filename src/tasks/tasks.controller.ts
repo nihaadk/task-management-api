@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Param, Delete, Patch, Query, UsePipes, Val
 import { TasksService } from './tasks.service';
 import { Task } from './task.entity';
 import { CreateTaskDto } from './dto/create-task.dto';
+import { DeleteResult } from 'typeorm';
 
 @Controller('tasks')
 export class TasksController {
@@ -21,10 +22,10 @@ export class TasksController {
 		return this.tasksService.getTaskById(id);
 	}
 
-	// @Delete('/:id')
-	// deleteTask(@Param('id') id: string): void {
-	// 	this.tasksService.deleteTask(id);
-	// }
+	@Delete('/:id')
+	deleteTask(@Param('id', ParseIntPipe) id: number): Promise<DeleteResult> {
+		return this.tasksService.deleteTask(id);
+	}
 
 	@Post()
 	@UsePipes(ValidationPipe)
