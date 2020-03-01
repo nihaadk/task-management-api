@@ -70,10 +70,13 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Used Libraries
+## Used
 
 - [class-validator](https://github.com/typestack/class-validator)
 - [class-transformer](https://github.com/typestack/class-transformer)
+- [postgresql](https://www.postgresql.org/)
+- [pgadmin](https://www.pgadmin.org/)
+- [typeorm](https://typeorm.io/)
 
 ## License
 
