@@ -70,7 +70,7 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Use Libraries
+## Used Libraries
 
 - [class-validator](https://github.com/typestack/class-validator)
 - [class-transformer](https://github.com/typestack/class-transformer)
