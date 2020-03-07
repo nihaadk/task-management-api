@@ -6,6 +6,7 @@ import { CreateTaskDto } from './dto/create-task.dto';
 import { TaskStatus } from './task-status.enum';
 import { DeleteResult } from 'typeorm';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
+import { User } from '../auth/user.entity';
 
 @Injectable()
 export class TasksService {
@@ -15,12 +16,12 @@ export class TasksService {
 		private taskRepository: TaskRepository
 	) { }
 
-	async getTasks(filterDto: GetTasksFilterDto): Promise<Task[]> {
-		return this.taskRepository.getTasks(filterDto);
+	async getTasks(filterDto: GetTasksFilterDto, user: User): Promise<Task[]> {
+		return this.taskRepository.getTasks(filterDto, user);
 	}
 
-	async getTaskById(id: number): Promise<Task> {
-		const found = await this.taskRepository.findOne(id);
+	async getTaskById(id: number, user: User): Promise<Task> {
+		const found = await this.taskRepository.findOne({ where: { user, userId: user.id } });
 
 		if (!found) {
 			throw new NotFoundException(`Task with ID "${id}" not found`);
@@ -29,8 +30,8 @@ export class TasksService {
 		return found;
 	}
 
-	async deleteTask(id: number): Promise<DeleteResult> {
-		const deleteResult = await this.taskRepository.delete(id);
+	async deleteTask(id: number, user: User): Promise<DeleteResult> {
+		const deleteResult = await this.taskRepository.delete({ id, userId: user.id });
 
 		if (deleteResult.affected === 0) {
 			throw new NotFoundException(`Task with ID "${id}" not found`)
@@ -38,14 +39,14 @@ export class TasksService {
 		return deleteResult;
 	}
 
-	async updateTaskStatus(id: number, status: TaskStatus) {
-		const task = await this.getTaskById(id);
+	async updateTaskStatus(id: number, status: TaskStatus, user: User) {
+		const task = await this.getTaskById(id, user);
 		task.status = status;
 		task.save();
 		return task;
 	}
 
-	async createTask(createTaskDto: CreateTaskDto): Promise<Task> {
-		return this.taskRepository.createTask(createTaskDto);
+	async createTask(createTaskDto: CreateTaskDto, user: User): Promise<Task> {
+		return this.taskRepository.createTask(createTaskDto, user);
 	}
 }
