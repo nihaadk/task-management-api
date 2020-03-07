@@ -77,6 +77,8 @@ $ npm run test:cov
 - [postgresql](https://www.postgresql.org/)
 - [pgadmin](https://www.pgadmin.org/)
 - [typeorm](https://typeorm.io/)
+- [passport](https://github.com/nestjs/passport)
+- [nestjs/jwt](https://github.com/nestjs/jwt)
 
 ## License
 
